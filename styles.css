@@ -112,14 +112,14 @@ header {
     position: absolute;
     top: 20px;
     right: 20px;
-    display: none;
+    display: none; /* Hidden on desktop, shown in mobile media query */
     justify-content: flex-end;
 }
 
 .nav-close {
     width: 40px;
     height: 40px;
-    border: 2px solid #ffc107; 
+    border: 2px solid #ffc107; /* Yellow border */
     background: #fff;
     border-radius: 4px;
     cursor: pointer;
@@ -133,6 +133,7 @@ header {
     background-color: #f5f5f5;
 }
 
+/* Overlay behind slide-in nav */
 .nav-overlay {
     position: fixed;
     top: 0;
@@ -173,7 +174,7 @@ nav ul li a {
 
 nav ul li a:hover,
 nav ul li a.active {
-    color: #ff4081; 
+    color: #ff4081; /* Pink/red for hover and active */
 }
 
 .book-btn {
@@ -196,6 +197,7 @@ section {
     min-height: 60vh;
 }
 
+/* Hero Section with Background Image */
 .hero-section {
     position: relative;
     min-height: 90vh;
@@ -316,6 +318,7 @@ section {
     background-color: #ad1457;
 }
 
+/* Section Headings - Increased Sizes */
 section h2 {
     font-size: 48px;
     font-weight: 700;
@@ -716,7 +719,7 @@ section h2 {
 
 /* LEFT PANEL */
 .contact-info {
-    background: #0d47a1; 
+    background: #0d47a1; /* Blue background to match theme */
     color: #fff;
     padding: 50px;
 }
@@ -1069,7 +1072,7 @@ footer {
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
     .top-bar {
-        display: none; 
+        display: none; /* Hide top bar on mobile */
     }
 
     header {
@@ -1081,7 +1084,7 @@ footer {
     }
 
     .nav-drawer-head {
-        display: flex; 
+        display: flex; /* Show close button on mobile */
     }
 
     nav#nav-menu {
@@ -1434,6 +1437,6 @@ footer {
     }
 
     .menu-toggle {
-        display: none !important; 
+        display: none !important; /* Hide hamburger on desktop */
     }
 }
