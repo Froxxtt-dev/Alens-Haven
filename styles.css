@@ -519,6 +519,22 @@ section h2 {
     background: #f9fbfd;
 }
 
+.why-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.why-header h2 {
+    font-size: 54px;
+    margin-bottom: 15px;
+    color: #0d47a1;
+}
+
+.why-header p {
+    font-size: 18px;
+    color: #666;
+}
+
 .why-grid {
     display: grid;
     grid-template-columns: 2fr 1fr;
