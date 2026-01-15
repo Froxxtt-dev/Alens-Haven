@@ -107,7 +107,7 @@ if (heroCarousel) {
     });
 }
 
-// Mobile services carousel
+// Mobile services carousel with pause on interaction and resume on idle
 if (window.innerWidth <= 768) {
     const servicesGrid = document.querySelector('.services-grid');
     if (servicesGrid) {
@@ -115,6 +115,8 @@ if (window.innerWidth <= 768) {
         if (cards.length > 0) {
             let currentIndex = 0;
             const cardWidth = cards[0].offsetWidth + 20; // Including gap
+            let servicesInterval = setInterval(slideNext, 3000);
+            let idleTimer;
 
             function slideNext() {
                 currentIndex++;
@@ -126,7 +128,22 @@ if (window.innerWidth <= 768) {
                 }
             }
 
-            setInterval(slideNext, 3000);
+            function pauseAutoScroll() {
+                clearInterval(servicesInterval);
+                clearTimeout(idleTimer);
+                idleTimer = setTimeout(() => {
+                    servicesInterval = setInterval(slideNext, 3000);
+                }, 5000); // Resume after 5 seconds of idle
+            }
+
+            // Pause on scroll or touch interaction
+            servicesGrid.addEventListener('scroll', pauseAutoScroll);
+            servicesGrid.addEventListener('touchstart', pauseAutoScroll);
+            servicesGrid.addEventListener('touchmove', pauseAutoScroll);
+            servicesGrid.addEventListener('touchend', pauseAutoScroll);
+            servicesGrid.addEventListener('mousedown', pauseAutoScroll);
+            servicesGrid.addEventListener('mousemove', pauseAutoScroll);
+            servicesGrid.addEventListener('mouseup', pauseAutoScroll);
         }
     }
 }
